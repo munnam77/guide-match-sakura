@@ -1,0 +1,48 @@
+import { Traveler } from '@/types';
+
+export const travelers: Traveler[] = [
+  {
+    id: 'traveler-1',
+    name: '山田 太郎',
+    nameEn: 'Taro Yamada',
+    email: 'taro@example.com',
+    role: 'traveler',
+    nationality: '日本',
+    languages: ['日本語', '英語'],
+    favorites: ['guide-1', 'guide-2', 'guide-4'],
+    createdAt: '2025-11-01T00:00:00Z',
+  },
+  {
+    id: 'traveler-2',
+    name: 'John Smith',
+    nameEn: 'John Smith',
+    email: 'john@example.com',
+    role: 'traveler',
+    nationality: 'アメリカ',
+    languages: ['英語'],
+    favorites: ['guide-1', 'guide-3', 'guide-6'],
+    createdAt: '2025-12-15T00:00:00Z',
+  },
+  {
+    id: 'traveler-3',
+    name: '王 麗',
+    nameEn: 'Li Wang',
+    email: 'li@example.com',
+    role: 'traveler',
+    nationality: '中国',
+    languages: ['中国語', '英語'],
+    favorites: ['guide-1', 'guide-5'],
+    createdAt: '2026-01-10T00:00:00Z',
+  },
+  {
+    id: 'traveler-4',
+    name: 'Marie Dubois',
+    nameEn: 'Marie Dubois',
+    email: 'marie@example.com',
+    role: 'traveler',
+    nationality: 'フランス',
+    languages: ['フランス語', '英語'],
+    favorites: ['guide-2', 'guide-7'],
+    createdAt: '2026-01-20T00:00:00Z',
+  },
+];
