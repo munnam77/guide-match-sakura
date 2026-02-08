@@ -60,17 +60,17 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/how-it-works" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
+                <Link href="/" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
                   ご利用方法
                 </Link>
               </li>
               <li>
-                <Link href="/safety" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
+                <Link href="/" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
                   安全への取り組み
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
+                <Link href="/" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
                   よくある質問
                 </Link>
               </li>
@@ -82,22 +82,22 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">ガイドの方へ</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/become-guide" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
+                <Link href="/login" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
                   ガイド登録
                 </Link>
               </li>
               <li>
-                <Link href="/guide-resources" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
-                  ガイドリソース
+                <Link href="/guides" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
+                  ガイド一覧
                 </Link>
               </li>
               <li>
-                <Link href="/guide-standards" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
+                <Link href="/" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
                   品質基準
                 </Link>
               </li>
               <li>
-                <Link href="/guide-faq" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
+                <Link href="/" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
                   ガイドFAQ
                 </Link>
               </li>
@@ -109,22 +109,22 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">会社情報</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
+                <Link href="/" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
                   会社概要
                 </Link>
               </li>
               <li>
-                <Link href="/press" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
+                <Link href="/" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
                   プレスリリース
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
+                <Link href="/" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
                   採用情報
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
+                <Link href="/" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
                   お問い合わせ
                 </Link>
               </li>
@@ -139,15 +139,15 @@ export default function Footer() {
               © 2026 SakuraGuide, Inc. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link href="/terms" className="text-sm text-gray-500 hover:text-pink-400 transition-colors">
+              <span className="text-sm text-gray-500 hover:text-pink-400 transition-colors cursor-pointer">
                 利用規約
-              </Link>
-              <Link href="/privacy" className="text-sm text-gray-500 hover:text-pink-400 transition-colors">
+              </span>
+              <span className="text-sm text-gray-500 hover:text-pink-400 transition-colors cursor-pointer">
                 プライバシーポリシー
-              </Link>
-              <Link href="/law" className="text-sm text-gray-500 hover:text-pink-400 transition-colors">
+              </span>
+              <span className="text-sm text-gray-500 hover:text-pink-400 transition-colors cursor-pointer">
                 特定商取引法
-              </Link>
+              </span>
             </div>
           </div>
         </div>

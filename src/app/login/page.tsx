@@ -134,7 +134,7 @@ export default function LoginPage() {
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-600">
                 アカウントをお持ちでないですか？{' '}
-                <Link href="/register" className="text-pink-500 hover:text-pink-600 font-medium">
+                <Link href="/login" className="text-pink-500 hover:text-pink-600 font-medium">
                   新規登録
                 </Link>
               </p>
@@ -145,7 +145,7 @@ export default function LoginPage() {
               <p className="text-sm text-gray-700 text-center mb-2">
                 ガイドとして登録しませんか？
               </p>
-              <Link href="/become-guide">
+              <Link href="/login">
                 <Button variant="outline" className="w-full border-pink-300 text-pink-600 hover:bg-pink-100">
                   ガイド登録について
                 </Button>
@@ -157,9 +157,9 @@ export default function LoginPage() {
         {/* Info */}
         <p className="text-center text-sm text-gray-500 mt-6">
           ログインすることで、
-          <a href="/terms" className="text-pink-500 hover:underline">利用規約</a>
+          <span className="text-pink-500 hover:underline cursor-pointer">利用規約</span>
           と
-          <a href="/privacy" className="text-pink-500 hover:underline">プライバシーポリシー</a>
+          <span className="text-pink-500 hover:underline cursor-pointer">プライバシーポリシー</span>
           に同意したものとみなされます。
         </p>
       </div>

@@ -52,7 +52,7 @@ export default function Header() {
               ガイドを探す
             </Link>
             <Link
-              href="/about"
+              href="/guides"
               className="text-sm font-medium text-gray-700 hover:text-pink-400 transition-colors"
             >
               SakuraGuideとは
@@ -84,7 +84,7 @@ export default function Header() {
                     <Button variant="ghost" size="icon" className="relative">
                       <MessageSquare className="h-5 w-5" />
                       <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-pink-400 text-white text-xs flex items-center justify-center">
-                        1
+                        3
                       </span>
                     </Button>
                   </Link>
@@ -131,7 +131,7 @@ export default function Header() {
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link href="/profile" className="cursor-pointer">
+                      <Link href={getDashboardLink()} className="cursor-pointer">
                         <User className="mr-2 h-4 w-4" />
                         <span>プロフィール</span>
                       </Link>

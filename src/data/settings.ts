@@ -45,9 +45,10 @@ export function filterMessage(content: string): { filtered: string; isFiltered: 
   if (appSettings.wordFilter.enabled) {
     appSettings.wordFilter.bannedWords.forEach((word) => {
       const regex = new RegExp(word, 'gi');
-      if (regex.test(filtered)) {
+      const replaced = filtered.replace(regex, '***');
+      if (replaced !== filtered) {
         isFiltered = true;
-        filtered = filtered.replace(regex, '***');
+        filtered = replaced;
       }
     });
   }

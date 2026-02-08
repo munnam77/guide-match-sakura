@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { bookings } from '@/data/bookings';
 import { guides } from '@/data/guides';
 import { travelers } from '@/data/travelers';
+import { conversations } from '@/data/messages';
 import { Calendar, Heart, MessageSquare, Star, MapPin, Clock } from 'lucide-react';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
@@ -22,6 +23,9 @@ function TravelerDashboardContent() {
   );
   const pastBookings = userBookings.filter((b) => b.status === 'completed');
   const favoriteGuides = guides.filter((g) => traveler.favorites.includes(g.id));
+  const unreadMessages = conversations
+    .filter((c) => c.participants.includes(traveler.id))
+    .reduce((sum, c) => sum + c.unreadCount, 0);
 
   const getStatusBadge = (status: string) => {
     const variants: Record<string, { color: string; text: string }> = {
@@ -82,7 +86,7 @@ function TravelerDashboardContent() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-gray-600">未読メッセージ</p>
-                  <p className="text-3xl font-bold text-gray-900">1</p>
+                  <p className="text-3xl font-bold text-gray-900">{unreadMessages}</p>
                 </div>
                 <MessageSquare className="h-10 w-10 text-pink-400" />
               </div>

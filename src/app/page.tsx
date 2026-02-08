@@ -229,7 +229,7 @@ export default function HomePage() {
                 ガイドを探す
               </Button>
             </Link>
-            <Link href="/become-guide">
+            <Link href="/login">
               <Button
                 size="lg"
                 variant="outline"
