@@ -92,26 +92,33 @@ export default function GuidesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">ガイドを探す</h1>
-          <p className="text-lg text-gray-600">
+        <div className="mb-10">
+          <div className="inline-block mb-4">
+            <span className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+              Find Your Guide
+            </span>
+          </div>
+          <h1 className="text-5xl font-extrabold text-gray-900 mb-4 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+            ガイドを探す
+          </h1>
+          <p className="text-xl text-gray-600 font-medium">
             {filteredAndSortedGuides.length}名のガイドが見つかりました
           </p>
         </div>
 
-        {/* Search Bar */}
-        <div className="mb-6">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+        {/* Search Bar with Glass Morphism */}
+        <div className="mb-8">
+          <div className="relative backdrop-blur-xl bg-white/90 border-2 border-gray-200 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow">
+            <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 h-6 w-6 text-pink-500" />
             <Input
               type="text"
               placeholder="ガイド名、エリア、専門分野で検索..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-12 py-6 text-lg"
+              className="pl-16 py-7 text-lg border-0 bg-transparent focus-visible:ring-2 focus-visible:ring-pink-400"
             />
           </div>
         </div>
@@ -131,15 +138,15 @@ export default function GuidesPage() {
           {/* Results */}
           <div className="lg:col-span-3">
             {/* Sort */}
-            <div className="mb-6 flex items-center justify-between">
-              <p className="text-sm text-gray-600">
-                <span className="font-medium text-gray-900">{filteredAndSortedGuides.length}</span>
+            <div className="mb-8 flex items-center justify-between bg-white p-5 rounded-xl shadow-md border border-gray-200">
+              <p className="text-base text-gray-700 font-medium">
+                <span className="font-bold text-gray-900 text-lg">{filteredAndSortedGuides.length}</span>
                 件のガイド
               </p>
-              <div className="flex items-center space-x-2">
-                <span className="text-sm text-gray-600">並び替え:</span>
+              <div className="flex items-center space-x-3">
+                <span className="text-sm text-gray-700 font-semibold">並び替え:</span>
                 <Select value={sortBy} onValueChange={(value) => setSortBy(value as SortOption)}>
-                  <SelectTrigger className="w-48">
+                  <SelectTrigger className="w-52 border-2 border-gray-300 font-medium">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -154,23 +161,23 @@ export default function GuidesPage() {
 
             {/* Guide Grid */}
             {filteredAndSortedGuides.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                 {filteredAndSortedGuides.map((guide) => (
                   <GuideCard key={guide.id} guide={guide} />
                 ))}
               </div>
             ) : (
-              <div className="text-center py-20">
-                <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              <div className="text-center py-24 bg-white rounded-2xl shadow-lg border-2 border-gray-200">
+                <div className="text-7xl mb-6">🔍</div>
+                <h3 className="text-3xl font-extrabold text-gray-900 mb-4">
                   該当するガイドが見つかりませんでした
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-8 text-lg">
                   検索条件を変更してもう一度お試しください
                 </p>
                 <button
                   onClick={handleResetFilters}
-                  className="text-pink-500 hover:text-pink-600 font-medium"
+                  className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all"
                 >
                   フィルターをリセット
                 </button>

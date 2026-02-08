@@ -4,45 +4,48 @@ import { Facebook, Twitter, Instagram, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t mt-auto">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-gray-50 border-t mt-auto relative overflow-hidden">
+      {/* Top Gradient Line */}
+      <div className="h-1 w-full bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500"></div>
+
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-5">
             <div className="flex items-center space-x-2">
-              <span className="text-2xl">🌸</span>
-              <span className="text-xl font-bold bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">
+              <span className="text-3xl">🌸</span>
+              <span className="text-2xl font-extrabold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
                 SakuraGuide
               </span>
             </div>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 leading-relaxed">
               日本を深く知る。現地ガイドと旅行者をつなぐプラットフォーム。
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               <a
                 href="#"
-                className="text-gray-400 hover:text-pink-400 transition-colors"
+                className="text-gray-400 hover:text-pink-500 transition-all duration-300 hover:scale-110 bg-white p-2 rounded-lg shadow-sm hover:shadow-md"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-pink-400 transition-colors"
+                className="text-gray-400 hover:text-pink-500 transition-all duration-300 hover:scale-110 bg-white p-2 rounded-lg shadow-sm hover:shadow-md"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-pink-400 transition-colors"
+                className="text-gray-400 hover:text-pink-500 transition-all duration-300 hover:scale-110 bg-white p-2 rounded-lg shadow-sm hover:shadow-md"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-pink-400 transition-colors"
+                className="text-gray-400 hover:text-pink-500 transition-all duration-300 hover:scale-110 bg-white p-2 rounded-lg shadow-sm hover:shadow-md"
                 aria-label="Email"
               >
                 <Mail className="h-5 w-5" />
@@ -52,7 +55,7 @@ export default function Footer() {
 
           {/* For Travelers */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">旅行者の方へ</h3>
+            <h3 className="font-bold text-gray-900 mb-5 text-base">旅行者の方へ</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/guides" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
@@ -79,7 +82,7 @@ export default function Footer() {
 
           {/* For Guides */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">ガイドの方へ</h3>
+            <h3 className="font-bold text-gray-900 mb-5 text-base">ガイドの方へ</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/login" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">
@@ -106,7 +109,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">会社情報</h3>
+            <h3 className="font-bold text-gray-900 mb-5 text-base">会社情報</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-sm text-gray-600 hover:text-pink-400 transition-colors">

@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { User, LogOut, LayoutDashboard, MessageSquare, Heart } from 'lucide-react';
+import { getInitials, getAvatarGradient } from '@/lib/utils';
 
 export default function Header() {
   const { currentUser, logout } = useAuth();
@@ -22,23 +23,14 @@ export default function Header() {
     return `/dashboard/${currentUser.role}`;
   };
 
-  const getInitials = (name: string) => {
-    return name
-      .split(' ')
-      .map((n) => n[0])
-      .join('')
-      .toUpperCase()
-      .slice(0, 2);
-  };
-
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <span className="text-2xl">🌸</span>
-            <span className="text-xl font-bold bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">
+          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-all duration-300 hover:scale-105">
+            <span className="text-3xl">🌸</span>
+            <span className="text-2xl font-extrabold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
               SakuraGuide
             </span>
           </Link>
@@ -81,9 +73,9 @@ export default function Header() {
               <>
                 {currentUser.role !== 'admin' && (
                   <Link href="/messages">
-                    <Button variant="ghost" size="icon" className="relative">
+                    <Button variant="ghost" size="icon" className="relative hover:bg-pink-50">
                       <MessageSquare className="h-5 w-5" />
-                      <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-pink-400 text-white text-xs flex items-center justify-center">
+                      <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white text-xs flex items-center justify-center font-bold animate-pulse shadow-lg">
                         3
                       </span>
                     </Button>
@@ -92,12 +84,12 @@ export default function Header() {
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-                      <Avatar>
-                        <AvatarFallback className="bg-pink-100 text-pink-600 font-semibold">
+                    <Button variant="ghost" className="relative h-11 w-11 rounded-full p-0 hover:scale-105 transition-transform">
+                      <div className={`h-10 w-10 rounded-full bg-gradient-to-br ${getAvatarGradient(currentUser.name)} flex items-center justify-center shadow-md ring-2 ring-white`}>
+                        <span className="text-white font-bold text-sm">
                           {getInitials(currentUser.name)}
-                        </AvatarFallback>
-                      </Avatar>
+                        </span>
+                      </div>
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-56" align="end">
@@ -147,12 +139,12 @@ export default function Header() {
             ) : (
               <div className="flex items-center space-x-3">
                 <Link href="/login">
-                  <Button variant="ghost" className="text-gray-700 hover:text-pink-400">
+                  <Button variant="ghost" className="text-gray-700 hover:text-pink-500 font-semibold">
                     ログイン
                   </Button>
                 </Link>
                 <Link href="/login">
-                  <Button className="bg-pink-400 hover:bg-pink-500 text-white">
+                  <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold shadow-md hover:shadow-lg transition-all">
                     新規登録
                   </Button>
                 </Link>
